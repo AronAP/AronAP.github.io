@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>AronAP</title>
+  <style>
+    body {
+      font: 1em/1.8em sans-serif;
+      color: #353535;
+    }
+
+    main {
+      width: 80vw;
+      margin: 50px auto 0;
+    }
+
+    .monitor {
+      background: #1a1a1a;
+      color: #0bff27;
+      text-shadow: 1px 1px 2px #089119;
+      padding: 20px;
+      border-radius: 10px;
+      position: relative;
+      font-family: 'Courier New';
+      font-size: 18px;
+      height: 80vh;
+      letter-spacing: 0.2em;
+    }
+
+    h3 {
+      font-weight: 300;
+      font-size: 26px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .cursor {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+    }
+
+    .typed-cursor {
+      background: #0bff27;
+      text-shadow: none;
+      padding: 1px 0;
+    }
+
+    @media (max-width: 992px) {
+      body {
+      font: 1em/1.6em sans-serif;
+    }
+      .monitor {
+        font-size: 14px;
+      }
+
+      h3 {
+        font-size: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+      font: 1em/1.4em sans-serif;
+    }
+      main {
+        margin: 40px auto 0;
+      }
+
+      .monitor {
+        font-size: 12px;
+      }
+
+      h3 {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      body {
+      font: 1em/1.2em sans-serif;
+    }
+      main {
+        margin: 30px auto 0;
+      }
+
+      .monitor {
+        font-size: 10px;
+      }
+
+      h3 {
+        font-size: 16px;
+      }
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+</head>
+
+<body>
+
+  <main>
+    <div class="monitor">
+      <h3>Повідомлення від адміністратора:</h3>
+      <div id="typed-strings">
+        <p>Ghbdsn? dsldsledfx!</p>
+        <p>^1500Привіт, відвідувач!<br>^1200
+          На даний момент сайт знаходиться в процесі розробки.<br>^1200
+          Трішечки терпіння^2000)
+        </p>
+      </div>
+      <div class="cursor">
+        <span id="typed"></span>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    var typed = new Typed('#typed', {
+      stringsElement: '#typed-strings',
+      contentType: 'html',
+      typeSpeed: 90,
+      startDelay: 1000,
+      backSpeed: 20,
+      backDelay: 700,
+    });
+  </script>
+
+</body>
+
+</html>
