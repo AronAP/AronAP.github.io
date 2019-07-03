@@ -1,59 +1,46 @@
-<!DOCTYPE html>
-<html>
+<?php
+error_reporting(-1);
+header('Content-Type: text/html; charset=utf-8');
 
-	<head>
-		<meta charset="UTF-8">
-		<title>Форма</title>
-	</head>
+/* https://api.telegram.org/bot881409762:AAFN6EE9LjERffoYMZqQ2VwCcj8DJX8OByA/getUpdates,
+где, XXXXXXXXXXXXXXXXXXXXXXX - токен вашего бота, полученный ранее */
 
-	<body>
+$name = $_POST['user_name'];
+$phone = $_POST['user_phone'];
+$length = $_POST['product_length'];
+$width = $_POST['product_width'];
+$height = $_POST['product_height'];
+$number = $_POST['product_number'];
+$token = "881409762:AAFN6EE9LjERffoYMZqQ2VwCcj8DJX8OByA";
+$chat_id = "-388235252";
+$separator = "";
 
-		<?php
-		error_reporting(-1);
-		header('Content-Type: text/html; charset=utf-8');
+if($phone == "") {
+	$phone = "НЕИЗВЕСТЕН";
+} else {
+	$phone = urlencode("+").$phone;
+}
 
-		/* https://api.telegram.org/bot881409762:AAFN6EE9LjERffoYMZqQ2VwCcj8DJX8OByA/getUpdates,
-		где, XXXXXXXXXXXXXXXXXXXXXXX - токен вашего бота, полученный ранее */
+$arr = array(
+	"Имя: " => $name,
+	"Телефон: " => $phone,
+	"_____________" => $separator,
+	"Длина изделия (м): " => $length . "м",
+	"Ширина изделия (м): " => $width . "м",
+	"Высота изделия (м): " => $height . "м",
+	"Количество изделий (штук): " => $number . " штук"
+);
 
-		$name = $_POST['user_name'];
-		$phone = $_POST['user_phone'];
-		$length = $_POST['product_length'];
-		$width = $_POST['product_width'];
-		$height = $_POST['product_height'];
-		$number = $_POST['product_number'];
-		$token = "881409762:AAFN6EE9LjERffoYMZqQ2VwCcj8DJX8OByA";
-		$chat_id = "-388235252";
-		$separator = "";
+foreach($arr as $key => $value) {
+	$txt .= "<b>".$key."</b> ".$value."%0A";
+};
 
-		if($phone == "") {
-			$phone = "НЕИЗВЕСТЕН";
-		} else {
-			$phone = urlencode("+").$phone;
-		}
+$sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}","r");
 
-		$arr = array(
-			"Имя: " => $name,
-			"Телефон: " => $phone,
-			"_____________" => $separator,
-			"Длина изделия (м): " => $length . "м",
-			"Ширина изделия (м): " => $width . "м",
-			"Высота изделия (м): " => $height . "м",
-			"Количество изделий (штук): " => $number . " штук"
-		);
+if ($sendToTelegram) {
+	header('Location: thank-you.php');
+} else {
+	header('Location: error.html');
+}
 
-		foreach($arr as $key => $value) {
-			$txt .= "<b>".$key."</b> ".$value."%0A";
-		};
-
-		$sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}","r");
-
-		if ($sendToTelegram) {
-			header('Location: thank-you.php');
-		} else {
-			header('Location: error.html');
-		}
-
-		?>
-
-	</body>
-</html>
+?>
