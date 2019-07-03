@@ -1,4 +1,6 @@
 <?php
+error_reporting(-1);
+header('Content-Type: text/html; charset=utf-8');
 
 /* https://api.telegram.org/bot881409762:AAFN6EE9LjERffoYMZqQ2VwCcj8DJX8OByA/getUpdates,
 где, XXXXXXXXXXXXXXXXXXXXXXX - токен вашего бота, полученный ранее */
@@ -20,7 +22,7 @@ if($phone == "") {
 }
 
 $arr = array(
-  "Имя: " => $name,
+	"Имя: " => $name,
 	"Телефон: " => $phone,
 	"_____________" => $separator,
 	"Длина изделия (м): " => $length . "м",
