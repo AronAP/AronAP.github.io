@@ -14,7 +14,7 @@
 
   <!-- Custom styles for this template -->
   <link rel="stylesheet" href="css/roboto.min.css">
-  <link rel="stylesheet" href="css/thank-you.css">
+  <link rel="stylesheet" href="css/thank-you.min.css">
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143071497-1"></script>
