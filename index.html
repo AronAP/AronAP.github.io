@@ -15,6 +15,7 @@
     main {
       width: 80vw;
       margin: 50px auto 0;
+      overflow: hidden;
     }
 
     .monitor {
@@ -22,6 +23,7 @@
       color: #0bff27;
       text-shadow: 1px 1px 2px #089119;
       padding: 20px;
+      padding-top: 0;
       border-radius: 10px;
       position: relative;
       font-family: 'Courier New';
@@ -31,16 +33,23 @@
     }
 
     h3 {
+      position: inherit;
+      background: #1a1a1a;
       font-weight: 300;
       font-size: 26px;
       margin: 0;
-      padding: 0;
+      padding: 20px 0 20px;
+      text-transform: uppercase;
+      z-index: 1;
     }
 
     .cursor {
       position: absolute;
       bottom: 20px;
       left: 20px;
+      z-index: 0;
+      padding-right: 20px;
+      z-index: 0;
     }
 
     .typed-cursor {
@@ -52,6 +61,26 @@
     .project_url {
       color: #ff0b0b;
       text-shadow: 1px 1px 2px #910808;
+    }
+
+    /* SKIP */
+    #skip {
+      display: none;
+      position: absolute;
+      height: auto;
+      bottom: 0;
+      left: 20px;
+      padding-right: 20px;
+      z-index: 0;
+    }
+
+    #skip-btn {
+      visibility: hidden;
+      opacity: 0;
+      color: #0bff27;
+      text-shadow: 1px 1px 2px #089119;
+      transition: 1s;
+      text-transform: uppercase;
     }
 
     @media (max-width: 992px) {
@@ -102,6 +131,16 @@
       h3 {
         font-size: 17px;
       }
+
+      #skip {
+        overflow-y: scroll;
+        max-height: 75%;
+      }
+
+      .cursor {
+        overflow-y: scroll;
+        max-height: 70%;
+      }
     }
   </style>
 
@@ -127,17 +166,21 @@
   <main>
     <div class="monitor">
       <h3>Повідомлення від адміністратора:</h3>
+      <a href="#" id="skip-btn">Пропустити</a>
       <div id="typed-strings">
         <p>Ghbdsn^300?^300 dsldsledfx^300!^300</p>
         <p>^1500Привіт^300,^300 відвідувач^300!<br>^1200
           На даний момент сайт знаходиться в процесі розробки.<br>^1200
           Трішечки терпіння^1000)<br>^1200
           А поки можеш поглянути на декілька моїх пет-проектів^300:<br>^1200
-          <a href="Kind-Cardboard/index.html" target="_blank" class="project_url" onclick="ga('send', 'event', 'link', 'click', 'kindCardboard')">Kind Cardboard</a> ^300-^600 лендінг
+          <a href="Kind-Cardboard/index.html" target="_blank" class="project_url"
+            onclick="ga('send', 'event', 'link', 'click', 'kindCardboard')">Kind Cardboard</a> ^300-^600 лендінг
           компанії з продажу картонних виробів^300;<br>^1200
-          <a href="GoldCoach/index.html" target="_blank" class="project_url" onclick="ga('send', 'event', 'link', 'click', 'goldCoach')">Gold Coach</a> ^300-^600 лендінг для набору
+          <a href="GoldCoach/index.html" target="_blank" class="project_url"
+            onclick="ga('send', 'event', 'link', 'click', 'goldCoach')">Gold Coach</a> ^300-^600 лендінг для набору
           на тренінг бізнес-коуча^300.<br><br>^1200
-          Ось ще <a href="https://github.com/AronAP" target="_blank" class="project_url" onclick="ga('send', 'event', 'link', 'click', 'gitHub')">посилання</a> на мій профіль
+          Ось ще <a href="https://github.com/AronAP" target="_blank" class="project_url"
+            onclick="ga('send', 'event', 'link', 'click', 'gitHub')">посилання</a> на мій профіль
           <strong>GitHub</strong>.<br>^1200
           Хай щастить^2000&#x2764;
         </p>
@@ -145,10 +188,35 @@
       <div class="cursor">
         <span id="typed"></span>
       </div>
+
+      <!-- SKIP -->
+      <div id="skip">
+        <p>Привіт, відвідувач!<br>
+          На даний момент сайт знаходиться в процесі розробки.<br>
+          Трішечки терпіння)<br>
+          А поки можеш поглянути на декілька моїх пет-проектів:<br>
+          <a href="Kind-Cardboard/index.html" target="_blank" class="project_url"
+            onclick="ga('send', 'event', 'link', 'click', 'kindCardboard')">Kind Cardboard</a> - лендінг
+          компанії з продажу картонних виробів;<br>
+          <a href="GoldCoach/index.html" target="_blank" class="project_url"
+            onclick="ga('send', 'event', 'link', 'click', 'goldCoach')">Gold Coach</a> - лендінг для набору
+          на тренінг бізнес-коуча.<br><br>
+          Ось ще <a href="https://github.com/AronAP" target="_blank" class="project_url"
+            onclick="ga('send', 'event', 'link', 'click', 'gitHub')">посилання</a> на мій профіль
+          <strong>GitHub</strong>.<br>
+          Хай щастить&#x2764;<span class="typed-cursor typed-cursor--blink">|</span>
+
+        </p>
+      </div>
+
     </div>
+
   </main>
 
+
+
   <script>
+    // typed.js
     var typed = new Typed('#typed', {
       stringsElement: '#typed-strings',
       contentType: 'html',
@@ -157,6 +225,27 @@
       backSpeed: 20,
       backDelay: 700,
     });
+
+    // SKIP
+    var btn = document.getElementById('skip-btn'),
+      typedField = document.getElementsByClassName('cursor')[0],
+      skipField = document.getElementById('skip');
+
+    btn.addEventListener('click', function () {
+      typedField.style.display = 'none';
+      skipField.style.display = 'block';
+      btn.style.display = 'none';
+    });
+
+    setTimeout(function () {
+      btn.style.visibility = 'visible';
+      btn.style.opacity = 100;
+    }, 20000);
+
+    setTimeout(function () {
+      btn.style.visibility = 'hidden';
+      btn.style.opacity = 0;
+    }, 68000);
   </script>
 
 </body>
