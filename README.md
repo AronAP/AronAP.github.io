@@ -1,4 +1,4 @@
-# [aronap.github.io](https://aronap.github.io/) #
+# [aronap](https://aronap.github.io/) #
 
 Hi, everyone!
 
