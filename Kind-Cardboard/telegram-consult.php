@@ -1,19 +1,6 @@
 <?php
-error_reporting(-1);
-header('Content-Type: text/html; charset=utf-8');
 
-/* https://api.telegram.org/bot881409762:AAFN6EE9LjERffoYMZqQ2VwCcj8DJX8OByA/getUpdates,
-где, XXXXXXXXXXXXXXXXXXXXXXX - токен вашего бота, полученный ранее */
-
-$name = $_POST['user_name'];
-$phone = $_POST['user_phone'];
-$length = $_POST['product_length'];
-$width = $_POST['product_width'];
-$height = $_POST['product_height'];
-$number = $_POST['product_number'];
-$token = "881409762:AAFN6EE9LjERffoYMZqQ2VwCcj8DJX8OByA";
-$chat_id = "-388235252";
-$separator = "";
+include ('variable-consult.php');
 
 if($phone == "") {
 	$phone = "НЕИЗВЕСТЕН";
@@ -22,7 +9,7 @@ if($phone == "") {
 }
 
 $arr = array(
-	"Имя: " => $name,
+  "Имя: " => $name,
 	"Телефон: " => $phone,
 	"_____________" => $separator,
 	"Длина изделия (м): " => $length . "м",
