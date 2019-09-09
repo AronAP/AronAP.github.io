@@ -14,5 +14,8 @@ Full details can be found in [this repo](https://github.com/AronAP/HelloExpress)
 2. **[Kind Cardboard](https://aronap.github.io/Kind-Cardboard)** - landing page.  
 Look at the project and the technology stack in [this repo](https://github.com/AronAP/Kind-Cardboard) on GitHub.
 
-3. **[Gold Coach](https://aronap.github.io/GoldCoach)** - landing page.  
+3. **[Handmade with l&#x2764;ve](https://aronap.github.io/Handmade)** - mailing letter.  
+All files are located in [this repo](https://github.com/AronAP/Handmade) on GitHub.
+
+4. **[Gold Coach](https://aronap.github.io/GoldCoach)** - landing page.  
 In [this repo](https://github.com/AronAP/GoldCoach) on GitHub you can find this project.
