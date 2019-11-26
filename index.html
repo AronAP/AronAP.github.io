@@ -1,188 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ua">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>AronAP</title>
-  <style>
-    body {
-      font: 1em/1.8em sans-serif;
-      color: #353535;
-    }
 
-    .github-corner {
-      position: fixed;
-      right: 0;
-      top: 0;
-      z-index: 1;
-    }
-
-    .github-corner svg {
-      fill: #000;
-      height: 80px;
-      color: #fff;
-      width: 80px;
-    }
-
-    .octo-arm {
-      transform-origin: 130px 106px;
-    }
-
-    .github-corner:hover .octo-arm {
-      animation: a .56s ease-in-out
-    }
-
-    @keyframes a {
-
-      0%,
-      to {
-        transform: rotate(0)
-      }
-
-      20%,
-      60% {
-        transform: rotate(-25deg)
-      }
-
-      40%,
-      80% {
-        transform: rotate(10deg)
-      }
-    }
-
-    main {
-      width: 80vw;
-      margin: 50px auto 0;
-      overflow: hidden;
-    }
-
-    .monitor {
-      background: #1a1a1a;
-      color: #0bff27;
-      text-shadow: 1px 1px 2px #089119;
-      padding: 20px;
-      padding-top: 0;
-      border-radius: 10px;
-      position: relative;
-      font-family: 'Courier New';
-      font-size: 18px;
-      height: 80vh;
-      letter-spacing: 0.2em;
-    }
-
-    h3 {
-      position: inherit;
-      background: #1a1a1a;
-      font-weight: 300;
-      font-size: 26px;
-      margin: 0;
-      padding: 20px 0 20px;
-      text-transform: uppercase;
-      z-index: 1;
-    }
-
-    .cursor {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      z-index: 0;
-      padding-right: 20px;
-      z-index: 0;
-    }
-
-    .typed-cursor {
-      background: #0bff27;
-      text-shadow: none;
-      padding: 1px 0;
-    }
-
-    .project_url {
-      color: #ff0b0b;
-      text-shadow: 1px 1px 2px #910808;
-    }
-
-    /* SKIP */
-    #skip {
-      display: none;
-      position: absolute;
-      height: auto;
-      bottom: 0;
-      left: 20px;
-      padding-right: 20px;
-      z-index: 0;
-    }
-
-    #skip-btn {
-      visibility: hidden;
-      opacity: 0;
-      color: #0bff27;
-      text-shadow: 1px 1px 2px #089119;
-      transition: 1s;
-      text-transform: uppercase;
-    }
-
-    @media (max-width: 992px) {
-      body {
-        font: 1em/1.6em sans-serif;
-      }
-
-      .monitor {
-        font-size: 17px;
-      }
-
-      h3 {
-        font-size: 22px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      body {
-        font: 1em/1.4em sans-serif;
-      }
-
-      main {
-        margin: 40px auto 0;
-      }
-
-      .monitor {
-        font-size: 16px;
-      }
-
-      h3 {
-        font-size: 18px;
-      }
-    }
-
-    @media (max-width: 576px) {
-      body {
-        font: 1em/1.2em sans-serif;
-      }
-
-      main {
-        margin: 30px auto 0;
-      }
-
-      .monitor {
-        font-size: 15px;
-      }
-
-      h3 {
-        font-size: 17px;
-      }
-
-      #skip {
-        overflow-y: scroll;
-        max-height: 75%;
-      }
-
-      .cursor {
-        overflow-y: scroll;
-        max-height: 70%;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143071497-1"></script>
@@ -197,8 +22,8 @@
     gtag('config', 'UA-143071497-1');
   </script>
 
-
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+  <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -217,31 +42,42 @@
 
   <main>
     <div class="monitor">
+
+      <ul class="change-lang">
+        <li class="change-lang__li">
+          <a href="http://artemprydybailo.h1n.ru/" class="change-lang__a highlighted">UA</a>
+        </li>
+        <li class="change-lang__li">
+          <a href="http://en.artemprydybailo.h1n.ru/" class="change-lang__a">EN</a></li>
+      </ul>
+
       <h3>Повідомлення від адміністратора:</h3>
       <a href="#" id="skip-btn">Пропустити</a>
       <div id="typed-strings">
         <p>Ghbdsn^300?^300 dsldsledfx^300!^300</p>
         <p>^1500Привіт^300,^300 відвідувач^300!<br>^1200
           На даний момент сайт знаходиться в процесі розробки.<br>^1200
-          Трішечки терпіння^1000)<br>^1200
-          А поки можеш поглянути на декілька моїх пет-проектів^300:<br>^1200
-          <a href="HelloExpress/index.html" target="_blank" class="project_url"
+          Але це не заважає мені показати свої пет-проекти^300!<br>^1200
+          Ось список найкращих^300:<br>^1200
+          <a href="HelloExpress/index.html" target="_blank" class="project_url highlighted"
             onclick="ga('send', 'event', 'link', 'click', 'helloExpress')">Hello Express</a> ^300-^600 інтернет-магазин
           телефонів^300;<br>^1200
-          <a href="ToDoList/index.html" target="_blank" class="project_url">ToDoList</a> ^300-^600 онлайн менеджер
+          <a href="ToDoList/index.html" target="_blank" class="project_url highlighted">ToDoList</a> ^300-^600 онлайн
+          менеджер
           завдань^300;<br>^1200
-          <a href="Kind-Cardboard/index.html" target="_blank" class="project_url"
+          <a href="Kind-Cardboard/index.html" target="_blank" class="project_url highlighted"
             onclick="ga('send', 'event', 'link', 'click', 'kindCardboard')">Kind Cardboard</a> ^300-^600 лендінг
           компанії з продажу картонних виробів^300;<br>^1200
-          <a href="Mikocin/index.html" target="_blank" class="project_url">Mikocin</a> ^300-^600 лендінг препарату
+          <a href="Mikocin/index.html" target="_blank" class="project_url highlighted">Mikocin</a> ^300-^600 лендінг
+          препарату
           Мікоцин^300;<br>^1200
-          <a href="GoldCoach/index.html" target="_blank" class="project_url"
+          <a href="GoldCoach/index.html" target="_blank" class="project_url highlighted"
             onclick="ga('send', 'event', 'link', 'click', 'goldCoach')">Gold Coach</a> ^300-^600 лендінг для набору на
-          тренінг бізнес-коуча^300.<br>^1200
-          <a href="Handmade/index.html" target="_blank" class="project_url"
+          тренінг бізнес-коуча^300;<br>^1200
+          <a href="Handmade/index.html" target="_blank" class="project_url highlighted"
             onclick="ga('send', 'event', 'link', 'click', 'handmade')">Handmade with l&#x2764;ve</a> ^300-^600 акційний
-          лист для поштових розсилок^300;<br><br>^1200
-          Ось ще <a href="https://github.com/AronAP" target="_blank" class="project_url"
+          лист для поштових розсилок^300.<br><br>^1200
+          Ось ще <a href="https://github.com/AronAP" target="_blank" class="project_url highlighted"
             onclick="ga('send', 'event', 'link', 'click', 'gitHub')">посилання</a> на мій профіль
           <strong>GitHub</strong>.<br>^1200
           Хай щастить^2000&#x2764;
@@ -255,23 +91,25 @@
       <div id="skip">
         <p>Привіт, відвідувач!<br>
           На даний момент сайт знаходиться в процесі розробки.<br>
-          Трішечки терпіння)<br>
-          А поки можеш поглянути на декілька моїх пет-проектів:<br>
-          <a href="HelloExpress/index.html" target="_blank" class="project_url"
+          Але це не заважає мені показати свої пет-проекти!<br>
+          Ось список найкращих:<br>
+          <a href="HelloExpress/index.html" target="_blank" class="project_url highlighted"
             onclick="ga('send', 'event', 'link', 'click', 'helloExpress')">Hello Express</a> - інтернет-магазин
           телефонів;<br>
-          <a href="ToDoList/index.html" target="_blank" class="project_url">ToDoList</a> - онлайн менеджер завдань;<br>
-          <a href="Kind-Cardboard/index.html" target="_blank" class="project_url"
+          <a href="ToDoList/index.html" target="_blank" class="project_url highlighted">ToDoList</a> - онлайн менеджер
+          завдань;<br>
+          <a href="Kind-Cardboard/index.html" target="_blank" class="project_url highlighted"
             onclick="ga('send', 'event', 'link', 'click', 'kindCardboard')">Kind Cardboard</a> - лендінг компанії з
           продажу картонних виробів;<br>
-          <a href="Mikocin/index.html" target="_blank" class="project_url">Mikocin</a> - лендінг препарату Мікоцин;<br>
-          <a href="GoldCoach/index.html" target="_blank" class="project_url"
+          <a href="Mikocin/index.html" target="_blank" class="project_url highlighted">Mikocin</a> - лендінг препарату
+          Мікоцин;<br>
+          <a href="GoldCoach/index.html" target="_blank" class="project_url highlighted"
             onclick="ga('send', 'event', 'link', 'click', 'goldCoach')">Gold Coach</a> - лендінг для набору на тренінг
-          бізнес-коуча.<br>
-          <a href="Handmade/index.html" target="_blank" class="project_url"
+          бізнес-коуча;<br>
+          <a href="Handmade/index.html" target="_blank" class="project_url highlighted"
             onclick="ga('send', 'event', 'link', 'click', 'handmade')">Handmade with l&#x2764;ve</a> - акційний лист для
-          поштових розсилок;<br><br>
-          Ось ще <a href="https://github.com/AronAP" target="_blank" class="project_url"
+          поштових розсилок.<br><br>
+          Ось ще <a href="https://github.com/AronAP" target="_blank" class="project_url highlighted"
             onclick="ga('send', 'event', 'link', 'click', 'gitHub')">посилання</a> на мій профіль
           <strong>GitHub</strong>.<br>
           Хай щастить&#x2764;<span class="typed-cursor typed-cursor--blink">|</span>
@@ -281,41 +119,6 @@
     </div>
 
   </main>
-
-
-
-  <script>
-    // typed.js
-    var typed = new Typed('#typed', {
-      stringsElement: '#typed-strings',
-      contentType: 'html',
-      typeSpeed: 60,
-      startDelay: 1000,
-      backSpeed: 20,
-      backDelay: 700,
-    });
-
-    // SKIP
-    var btn = document.getElementById('skip-btn'),
-      typedField = document.getElementsByClassName('cursor')[0],
-      skipField = document.getElementById('skip');
-
-    btn.addEventListener('click', function () {
-      typedField.style.display = 'none';
-      skipField.style.display = 'block';
-      btn.style.display = 'none';
-    });
-
-    setTimeout(function () {
-      btn.style.visibility = 'visible';
-      btn.style.opacity = 100;
-    }, 20000);
-
-    setTimeout(function () {
-      btn.style.visibility = 'hidden';
-      btn.style.opacity = 0;
-    }, 72000);
-  </script>
 
 </body>
 
